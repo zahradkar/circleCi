@@ -28,12 +28,12 @@ jobs:
     steps:
       - checkout
       - run:
+          name: display path to current directory
+          command: pwd
+      - run:
           name: displaying content of current directory
           command: ls -la
 
-      - run:
-          name: display path to current directory
-          command: pwd
 
 
       # Download and cache dependencies
