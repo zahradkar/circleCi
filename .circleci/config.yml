@@ -28,7 +28,7 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
-      - run: java --version
+#      - run: java --version
 
       # Download and cache dependencies
       - restore_cache:
