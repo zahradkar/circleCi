@@ -29,7 +29,7 @@ jobs:
       - checkout
       - run:
           name: displaying content of current directory
-          command: ls -la
+          command: pwd | ls -la
       # Download and cache dependencies
       - restore_cache:
           keys:
