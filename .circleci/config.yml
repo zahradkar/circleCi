@@ -10,7 +10,7 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#docker-machine-macos-windows-executor
     docker:
       # specify the version you desire here
-      - image: cimg/openjdk:15.0
+      - image: cimg/openjdk:17.0
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -34,8 +34,6 @@ jobs:
       - run:
           name: displaying content of current directory
           command: ls -la
-
-
 
       # Download and cache dependencies
       - restore_cache:
