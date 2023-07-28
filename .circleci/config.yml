@@ -27,7 +27,9 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
-
+      - run:
+          name: displaying content of current directory
+          command: ls -la
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -44,5 +46,3 @@ jobs:
 
       # run tests!
       - run: gradle test
-
-      - run: ls
