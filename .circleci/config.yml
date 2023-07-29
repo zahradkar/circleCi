@@ -6,8 +6,9 @@ jobs:
       - image: cimg/openjdk:8.0.362
     steps:
       - checkout
-      - run: ./gradlew clean build
-      - run: docker build -t my-image .
+      - run: whoami
+      - run: sudo ./gradlew clean build
+      - run: sudo docker build -t my-image .
       - run:
           name: docker-logging
           environment:
