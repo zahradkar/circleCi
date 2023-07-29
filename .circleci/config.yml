@@ -50,3 +50,4 @@ jobs:
           command: gradle test
 
       - run: docker build -t my-image .
+      - run: docker run -it my-image
