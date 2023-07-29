@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run: whoami
       - run: ls -la
-      - run: ./gradlew clean build
+      - run: sudo ./gradlew clean build
       - run: docker build -t my-image .
       - run:
           name: docker-logging
