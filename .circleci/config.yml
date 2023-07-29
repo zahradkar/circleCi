@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run: whoami
       - run: ls -la
-      - run: sudo chmod 777 gradlew
+      - run: sudo chmod +x gradlew
       - run: ./gradlew clean build
       - run: docker build -t my-image .
       - run:
@@ -19,3 +19,4 @@ jobs:
           command: docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
       - run: docker tag my-image $DOCKERHUB_USER/my-image:$CIRCLE_SHA1
       - run: docker push $DOCKERHUB_USER/my-image:$CIRCLE_SHA1
+
