@@ -8,6 +8,11 @@ jobs:
       - checkout
       - run: ./gradlew clean build
       - run: docker build -t my-image .
-      - run: docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
+      - run:
+          name: docker-logging
+          environment:
+            DOCKER_NAME: DOCKER_NAME
+            DOCKER_PASSWORD: DOCKER_PASSWORD
+          command: docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
       - run: docker tag my-image $DOCKERHUB_USER/my-image:$CIRCLE_SHA1
       - run: docker push $DOCKERHUB_USER/my-image:$CIRCLE_SHA1
