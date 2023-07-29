@@ -51,4 +51,5 @@ jobs:
 
       - run: ls -la
       - run: gradle build -x test
+      - run: ls -la build/
       - run: docker build -t my-image .
