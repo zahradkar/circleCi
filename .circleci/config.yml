@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/openjdk:latest
+      - image: cimg/openjdk:8.0.362
     steps:
       - checkout
       - run: ./gradlew clean build
