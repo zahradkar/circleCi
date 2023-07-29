@@ -3,8 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-#      - image: cimg/openjdk:8.0.362
-      - image: circleci/openjdk:8-jdk
+      - image: cimg/openjdk:8.0.362
     steps:
       - checkout
       - run: whoami
