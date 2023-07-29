@@ -3,12 +3,12 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/openjdk:latest
+      - image: cimg/openjdk:8.0.362
     steps:
       - checkout
       - run: whoami
       - run: ls -la
-      - run: chmod +x gradlew
+      - run: sudo chmod 777 gradlew
       - run: ./gradlew clean build
       - run: docker build -t my-image .
       - run:
@@ -19,8 +19,3 @@ jobs:
           command: docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
       - run: docker tag my-image $DOCKERHUB_USER/my-image:$CIRCLE_SHA1
       - run: docker push $DOCKERHUB_USER/my-image:$CIRCLE_SHA1
-
-workflows:
-  build-and-deploy:
-    jobs:
-      - build
