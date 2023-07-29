@@ -49,5 +49,6 @@ jobs:
           name: Testing...
           command: gradle test
 
+      - run: ls -la
+      - run: gradle build -x test
       - run: docker build -t my-image .
-      - run: docker run -it my-image
